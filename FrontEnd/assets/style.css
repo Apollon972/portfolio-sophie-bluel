@@ -147,23 +147,20 @@ li:hover {
 .filter-button {
 	font-size: 18px;
 	font-weight: 700;
+	padding: 8px 20px;
 	margin: 0.5%;
 	border: 1px solid #1D6154;
 	border-radius:  30px;
+	color: #1D6154;
 	background-color: #FFFEF8;
-    color: #1D6154;
     font-family: Syne;
-    height: 35px;
+	height: 40px;
+
 
 }
-.filter-button-active {
-	border: 1px solid #1D6154;
-	border-radius:  30px;
+.active {
     color: white;
     background-color: #1D6154;
-    font-family: Syne;
-    height: 35px;
-	width: 80px;
 }
 #contact {
 	width: 50%;
