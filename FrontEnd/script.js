@@ -2,6 +2,7 @@ let body = document.querySelector("body")
 let gallery = document.querySelector(".gallery")
 let h2 = document.querySelector("#portfolio h2")
 const token = sessionStorage.getItem("token")
+const divFilter = document.querySelector(".div-filter")
 
 
 fetch("http://localhost:5678/api/categories")
@@ -24,6 +25,10 @@ fetch("http://localhost:5678/api/categories")
         
     })
     h2.insertAdjacentElement("afterend", divFilter)
+
+    if (token) {
+        divFilter.style.display = "none"
+    }
 
     const boutons = divFilter.querySelectorAll("button")
     boutons.forEach(bouton => {
@@ -68,14 +73,29 @@ function afficherWorks(works) {
 if (token){
     const loginLink = document.querySelector(".login-link")
     loginLink.innerText = "logout"
+
+    const editMod = document.createElement("div")
+    const editModName = document.createElement("p")
+    const editName = document.createElement("button")
+    const titleWrapper = document.createElement("div")
+    titleWrapper.classList.add("title-wrapper")
+    editMod.classList.add("edit-mod")
+    editModName.classList.add("edit-mod-name")
+    editName.classList.add("edit-name")
+    editName.innerHTML = '<i class="fa-regular fa-pen-to-square"></i> modifier'
+    editModName.innerHTML = '<i class="fa-regular fa-pen-to-square"></i> Mode édition'
+    editMod.appendChild(editModName)
+    h2.before(titleWrapper)
+    titleWrapper.appendChild(h2)
+    titleWrapper.appendChild(editName) 
+    body.insertAdjacentElement("afterbegin" , editMod)
+    
     
     loginLink.addEventListener("click", (event) => {
         event.preventDefault()
         sessionStorage.removeItem("token")
         window.location.reload()
     })
-} else {
-    loginLink.innerText = "login"
 }
 
 
