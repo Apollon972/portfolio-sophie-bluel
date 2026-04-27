@@ -1,6 +1,7 @@
 let body = document.querySelector("body")
 let gallery = document.querySelector(".gallery")
 let h2 = document.querySelector("#portfolio h2")
+const token = sessionStorage.getItem("token")
 
 
 fetch("http://localhost:5678/api/categories")
@@ -53,6 +54,8 @@ function afficherWorks(works) {
             gallery.appendChild(figure)
     });
 }
+
+
     fetch("http://localhost:5678/api/works")
     .then (response => response.json())
     .then (works => {
@@ -62,10 +65,18 @@ function afficherWorks(works) {
 })
 
 
-
-divFilter.addEventListener("click", () => {
+if (token){
+    const loginLink = document.querySelector(".login-link")
+    loginLink.innerText = "logout"
     
-})
+    loginLink.addEventListener("click", (event) => {
+        event.preventDefault()
+        sessionStorage.removeItem("token")
+        window.location.reload()
+    })
+} else {
+    loginLink.innerText = "login"
+}
 
 
 
