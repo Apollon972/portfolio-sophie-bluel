@@ -30,7 +30,12 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	width: 100%;
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;  /* main pousse le footer vers le bas */
 }
 ol, ul {
 	list-style: none;
@@ -183,8 +188,10 @@ input {
 	border: none;
 }
 .edit-mod {
+	position: relative;
+    width: 100vw;
+	margin-left: calc(-50vw + 50%);
 	height: 50px;
-	width: 100%;
 	background-color: black;
 }
 .edit-mod-name {
@@ -256,6 +263,9 @@ input {
     background-color: #1D6154;
     font-family: Syne;
 	height: 40px;
+}
+button:hover {
+	cursor: pointer;
 }
 .forget-password {
 	align-self: center;
