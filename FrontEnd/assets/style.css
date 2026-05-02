@@ -35,7 +35,7 @@ body {
     min-height: 100vh;
 }
 main {
-    flex: 1;  /* main pousse le footer vers le bas */
+    flex: 1;
 }
 ol, ul {
 	list-style: none;
@@ -157,6 +157,123 @@ input {
 	justify-content: center;
 	margin-top: 3em;
 	margin-bottom: 2em;	
+}
+#contact {
+	width: 50%;
+	margin: auto;
+}
+#contact > * {
+	text-align: center;
+
+}
+#contact h2{
+	margin-bottom: 20px;
+}
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+.modal {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+}
+.modal-wrapper {
+	background-color: white;
+	padding: 30px;
+	padding-top: 60px;
+	padding-left: 120px;
+	padding-right: 120px;
+	border-radius: 10px;
+	max-width: 400px;
+	max-height: 72vh;
+	overflow-y: auto;
+	position: relative;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 30px 0;
+}
+
+
+.modal-figure {
+    position: relative;
+    margin: 0;
+}
+
+.modal-figure img {
+	padding-bottom: 20px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-figure .fa-trash-alt {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: black;
+    color: white;
+    padding: 4px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+.modal h2 {
+	display: flex;
+	justify-content: center;
+	color: black;
+	font-family: 'Work Sans';
+	font-size: 24px;
+	font-weight: 100;
+	padding-bottom: 20px;
+
+}
+.btn-add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 220px;
+	height: 40px;
+	text-align: center;
+	border-radius: 60px ;
+}
+.btn-close {
+	position: absolute;
+	top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .gallery {
@@ -298,38 +415,6 @@ button:hover {
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
 }
-#contact {
-	width: 50%;
-	margin: auto;
-}
-#contact > * {
-	text-align: center;
-
-}
-#contact h2{
-	margin-bottom: 20px;
-}
-#contact form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
-}
-
-#contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
-#contact label {
-	margin: 2em 0 1em 0;
-}
-#contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
-
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
